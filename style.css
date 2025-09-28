@@ -257,3 +257,58 @@ td.task-day {
   color: #fff;
   font-weight: bold;
 }
+/* ---------- Animated Book Icon ---------- */
+.book-icon {
+  display: inline-block;
+  width: 24px;
+  height: 18px;
+  margin-right: 8px;
+  position: relative;
+  top: 3px;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 3px;
+  box-shadow: inset -3px 0 #007bff, inset 3px 0 #007bff;
+  animation: openBook 1.5s infinite ease-in-out;
+}
+
+.book-icon::before,
+.book-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 3px;
+  transform-origin: center;
+}
+
+.book-icon::before {
+  left: 0;
+  transform: rotateY(0deg);
+  animation: flipLeft 1.5s infinite ease-in-out;
+}
+
+.book-icon::after {
+  right: 0;
+  transform: rotateY(0deg);
+  animation: flipRight 1.5s infinite ease-in-out;
+}
+
+/* Animations */
+@keyframes openBook {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes flipLeft {
+  0%, 100% { transform: rotateY(0deg); }
+  50% { transform: rotateY(-20deg); }
+}
+
+@keyframes flipRight {
+  0%, 100% { transform: rotateY(0deg); }
+  50% { transform: rotateY(20deg); }
+}
