@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studious</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="initApp()">
+  <header id="header"onclick="goHome()">
+    Studious
+    <button id="darkToggle" onclick="toggleDarkMode()">🌙</button>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li><a href="#" data-page="daily">Daily Tasks</a></li>
+        <li><a href="#" data-page="weekly">Weekly Tasks</a></li>
+        <li><a href="#" data-page="monthly">Monthly Tasks</a></li>
+        <li><a href="#" data-page="scheduled">Schedule Tasks</a></li>
+        <li><a href="#" data-page="notes">Notes</a></li>
+        <li><a href="#" data-page="study">Study Material</a></li>
+        <li><a href="#" data-page="calendar">Calendar</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Homepage Info -->
+      <div id="homepage" class="page active">
+        <h2>Welcome to Studious</h2>
+        <p>
+          Studious is designed to help you stay focused and organized by managing your study materials and tasks effectively.
+        </p>
+        <img src="sucessdd.jpg" alt="Studious Info" style="width: 500px;height:auto; margin-top: 20px; border-radius: 10px;">
+      </div>
+
+      <!-- Daily Task -->
+      <section id="daily" class="page">
+        <h2>Daily Tasks</h2>
+        <button class="add-btn" onclick="toggleAddTaskBar('daily')">＋ Add Task</button>
+        <div id="daily-add-bar" style="display:none;">
+          <input type="text" id="dailyTaskInput" placeholder="Enter task">
+          <input type="time" id="dailyTaskTime">
+          <button onclick="addTask('daily')">Add</button>
+        </div>
+        <ul id="dailyTaskList"></ul>
+      </section>
+
+      <!-- Weekly Task -->
+      <section id="weekly" class="page">
+        <h2>Weekly Tasks</h2>
+        <button class="add-btn" onclick="toggleAddTaskBar('weekly')">＋ Add Task</button>
+        <div id="weekly-add-bar" style="display:none;">
+          <input type="text" id="weeklyTaskInput" placeholder="Enter task">
+          <button onclick="addTask('weekly')">Add</button>
+        </div>
+        <ul id="weeklyTaskList"></ul>
+      </section>
+
+      <!-- Monthly Task -->
+      <section id="monthly" class="page">
+        <h2>Monthly Tasks</h2>
+        <button class="add-btn" onclick="toggleAddTaskBar('monthly')">＋ Add Task</button>
+        <div id="monthly-add-bar" style="display:none;">
+          <input type="text" id="monthlyTaskInput" placeholder="Enter task">
+          <button onclick="addTask('monthly')">Add</button>
+        </div>
+        <ul id="monthlyTaskList"></ul>
+      </section>
+
+      <!-- Scheduled Task -->
+      <section id="scheduled" class="page">
+        <h2>Scheduled Tasks</h2>
+        <ul id="scheduledTaskList"></ul>
+      </section>
+
+      <!-- Notes -->
+      <section id="notes" class="page">
+        <h2>Notes</h2>
+        <button class="add-btn" onclick="toggleAddNoteBar()">＋ Add Note</button>
+        <div id="note-add-bar" style="display:none;">
+          <textarea id="noteInput" placeholder="Write your note..."></textarea>
+          <button onclick="addNote()">Add</button>
+        </div>
+        <ul id="notesList"></ul>
+      </section>
+
+      <!-- Study Material -->
+      <section id="study" class="page">
+        <h2>Study Material</h2>
+        <label class="upload-circle">
+          <span class="arrow">⬆</span>
+          <p>Upload Files</p>
+          <input type="file" id="studyUpload" multiple>
+        </label>
+        <ul id="studyFileList"></ul>
+      </section>
+
+      <!-- Calendar -->
+      <section id="calendar" class="page">
+        <h2>Calendar</h2>
+        <div id="calendarContainer"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
