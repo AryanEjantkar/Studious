@@ -8,11 +8,15 @@
    <link rel="icon" type="image/png" href="book.png">
 </head>
 <body onload="initApp()">
-  <header id="header"onclick="goHome()">
-     <span class="book-icon"></span>
+  <header id="header" onclick="goHome()">
+  <h1 class="title">
+    <video autoplay loop muted playsinline class="logo-video">
+      <source src="book logo.mp4" type="video/mp4">
+    </video>
     Studious
-    <button id="darkToggle" onclick="toggleDarkMode()">🌙</button>
-  </header>
+  </h1>
+  <button id="darkToggle" onclick="toggleDarkMode()">🌙</button>
+</header>
 
   <div class="container">
     <!-- Sidebar -->
@@ -92,14 +96,17 @@
 
       <!-- Study Material -->
       <section id="study" class="page">
-        <h2>Study Material</h2>
-        <label class="upload-circle">
-          <span class="arrow">⬆</span>
-          <p>Upload Files</p>
-          <input type="file" id="studyUpload" multiple>
-        </label>
-        <ul id="studyFileList"></ul>
-      </section>
+  <div class="study-container">
+    <h2>Study Material</h2>
+    <label class="upload-circle">
+      <span class="arrow">⬆</span>
+      <p>Upload Files</p>
+      <input type="file" id="studyUpload" multiple>
+    </label>
+    <ul id="studyFileList"></ul>
+  </div>
+</section>
+
 
       <!-- Calendar -->
       <section id="calendar" class="page">

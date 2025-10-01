@@ -9,12 +9,21 @@ body {
 header {
   background: #020037;
   color: #fff;
-  padding: 15px;
+  padding: 8px; 
   text-align: center;
   cursor: pointer;
   position: relative;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
+display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 20px; /* smaller title text */
 }
 
 .container {
@@ -372,13 +381,13 @@ td.task-day {
   50% { transform: rotateY(20deg); }
 }
 /* ---------- Headings Font ---------- */
-h1, h2, h3, h4, h5, h6 {
+ h2, h3, h4, h5, h6 {
   font-family: "Lucida Grande", sans-serif;
-  color: #000; /* Light mode default */
+  color: #00080c; /* Light mode default */
 }
 
 /* Dark Mode Headings */
-body.dark-mode h1,
+
 body.dark-mode h2,
 body.dark-mode h3,
 body.dark-mode h4,
@@ -389,7 +398,7 @@ body.dark-mode h6 {
 /* ---------- App Title Styling ---------- */
 #header {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 28px;  /* adjust if you want it bigger */
+  font-size: 15px;  /* adjust if you want it bigger */
   font-weight: bold;
   color: #fbfbfb; /* Light mode */
 }
@@ -398,4 +407,33 @@ body.dark-mode h6 {
 body.dark-mode #header {
   color: #ffffff;
 }
+.title {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;
+  gap: 4px;
+}
+.logo-video {
+  width: 30px;   /* reduced size */
+  height: 30px;
+  border-radius: 4px; /* optional rounded edges */
+  object-fit: cover;
+}
+/* Center heading + upload circle */
+.study-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.study-container h2 {
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 24px;
+  color: #000; /* black in light mode */
+}
+
+body.dark-mode .study-container h2 {
+  color: #fff; /* white in dark mode */
+}
